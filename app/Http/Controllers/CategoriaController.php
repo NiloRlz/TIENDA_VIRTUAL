@@ -30,6 +30,11 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
+        $categorias=new Categoria;
+        $categorias->nombre=$request->input("nombre");
+        $categorias->descricion=$request->input("descricion");
+        $categorias->save();
+        return redirect()->back();
         //
     }
 
@@ -44,7 +49,7 @@ class CategoriaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Categoria $categoria)
+    public function edit($id)
     {
         //
     }
@@ -52,16 +57,25 @@ class CategoriaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, $id)
     {
+        $categorias=Categoria::find($id);
+        $categorias->nombre=$request->input("nombre");
+        $categorias->descricion=$request->input("descricion");
+        $categorias->Update();
+        return redirect()->back();
         //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Categoria $categoria)
+    public function destroy($id)
     {
+        $categorias=Categoria::find($id);
+        $categorias->delete();
+        return redirect()->back();
+
         //
     }
 }

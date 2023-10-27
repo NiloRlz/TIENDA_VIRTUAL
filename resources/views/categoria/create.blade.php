@@ -7,6 +7,10 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">AGREGAR CATEGORIA</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+
+      <form action="{{route('categorias.store')}}" method="post">
+      @csrf
+
       <div class="modal-body">
 
       <div class="mb-3">
@@ -20,12 +24,14 @@
           class="form-control" name="descripcion" id="" aria-describedby="helpId" placeholder="">
 
       </div>
-        ...
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-primary">Guardar</button>
       </div>
+      </form>
+      
     </div>
   </div>
 </div>
