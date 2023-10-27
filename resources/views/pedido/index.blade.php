@@ -37,7 +37,7 @@
                                         <th>No</th>
                                         
 										<th>Precio</th>
-										<th>Nombre cliente</th>
+										<th>Nombre del cliente</th>
 
                                         <th></th>
                                     </tr>
